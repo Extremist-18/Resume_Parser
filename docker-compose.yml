@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: backend
+    volumes:
+      - ./server:/app
+    ports:
+      - "4001:4001"
+    env_file:
+      - ./server/.env
+    networks:
+      - resume_network
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    environment:
+      - REACT_APP_API_URL=http://backend:4001
+    depends_on:
+      - backend
+    networks:
+      - resume_network
+
+networks:
+  resume_network:
+    driver: bridge

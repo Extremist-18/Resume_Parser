@@ -1,0 +1,316 @@
+/* App Container */
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  z-index: 0;
+}
+
+/* Background Canvas */
+.background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* App Content */
+.app-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  max-width: 700px;
+  width: 85%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  margin: 20px;
+}
+
+/* Resume Parser Styles */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.file-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #dc3545;
+  margin-top: 10px;
+}
+
+.info-section,
+.skills-section,
+.highlight-section {
+  margin: 20px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.info-item {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.info-item h3 {
+  margin-bottom: 5px;
+  color: #007bff;
+}
+
+.skills-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.skills-section li {
+  background: #027afc;
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.experience-section {
+  margin: 20px 0;
+}
+
+.experience-content {
+  margin-top: 20px;
+}
+
+.experience-section-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.experience-section-item h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.experience-text {
+  line-height: 1.6;
+}
+
+.experience-text mark {
+  background-color: #ffff00;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.highlight-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.highlight-section li {
+  background: #f8f9fa;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.highlight-section li strong {
+  color: #007bff;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5;
+  padding: 20px;
+}
+
+.App-header {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.upload-section {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.file-input input[type="file"] {
+  padding: 10px 20px;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.file-input input[type="file"]:hover {
+  border-color: #61dafb;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #dc3545;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f8d7da;
+  border-radius: 5px;
+}
+
+.info-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.info-item {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.info-item h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.skills-section, .experience-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.skills-section ul, .experience-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-section li, .experience-section li {
+  padding: 8px 16px;
+  margin: 5px 0;
+  background-color: #e9ecef;
+  border-radius: 3px;
+}
+
+.experience-content {
+  margin-top: 20px;
+}
+
+.experience-section-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.experience-section-item h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.experience-text {
+  line-height: 1.6;
+}
+
+.experience-text mark {
+  background-color: #ffff00;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
